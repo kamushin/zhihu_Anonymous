@@ -1,0 +1,19 @@
+{
+	"name": "Anonymous",
+	"version": "0.1",
+	"manifest_version": 2,
+	"permissions": ["storage", "tabs", "http://www.zhihu.com/question/*"], 
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"browser_action": {
+		"default_icon": "anonymous.png",
+		"default_title": "Set anonymous",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [{
+		"js": ["/libs/jquery.js", "contentscript.js"],
+		"matches": ["http://www.zhihu.com/question/*"]
+	}]
+}
